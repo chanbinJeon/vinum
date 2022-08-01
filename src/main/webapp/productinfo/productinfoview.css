@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#productinfobox {
+	box-shadow:1px 2px 5px 1px rgba(0, 0, 0, 0.2);
+	padding:42px;
+}
+
+.productinfo {
+	FLOAT:none;
+	clear:left;
+}
+
+#productnumber {
+	color:#666;
+}
+
+div#productimageslist {
+	border:2px solid #ababab;
+	float:right;
+}
+
+.productimage {
+	padding:6px;
+	float:none;
+}
+
+.productinfotableTR {
+	float:none;
+	clear:left;
+}
+
+.productinfotableTD {
+	/*width:100%;*/
+	float:none;
+	border-bottom:2px solid #ddd;
+}
+
+#productdescription {
+	padding:9px;
+}
