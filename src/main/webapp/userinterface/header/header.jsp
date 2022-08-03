@@ -16,7 +16,15 @@
     </a>
     <ul class="pure-menu-list">
         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
+        <%if(session.getAttribute("loginId") == null){ %>
         <li class="pure-menu-item pure-menu-selected"><a href="./user/login/loginpage.jsp" class="pure-menu-link">Login</a></li>
+        <%}
+        else{
+        %>
+         <li class="pure-menu-item pure-menu-selected"><a href="/vinum/logout.lo" class="pure-menu-link">Logout</a></li>
+        <%
+        }
+        %>
         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
     </ul>
 </div>

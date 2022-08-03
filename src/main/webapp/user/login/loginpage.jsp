@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./loginpagestyle.css" type="text/css">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 <div class="loginBG" id="loginBG" name="loginBG">
-	<form action="login.do" method="POST" class="loginform" id="loginform" name="loginform">
+	<form action="/vinum/login.lo" method="POST" class="loginform" id="loginform" name="loginform">
 		<div class="loginbox" id="loginboxdiv" name="loginboxdiv">
 			<div class="loginboxlabel" id="loginboxtitleDiv" name="loginboxtitle">
 				<label class="loginboxlabel" id="loginboxtitle" name="loginboxtitle">Login</label>
@@ -17,11 +17,11 @@
 			<table class="logintable" id="logintable" name="logintable">
 				<tr class="logintableTR" id="loginident" name="loginident">
 					<td class="logintableTD"><label for="identHere" class="loginboxlabel">ID</label></td>
-					<td class="logintableTD"><input type="text" class="logintextinput" id="identHere" name="identHere" placeholder="ID here"/></td>
+					<td class="logintableTD"><input type="text" class="logintextinput" id="identHere" name="memberId" placeholder="ID here"/></td>
 				</tr>
 				<tr class="logintableTR" id="loginpassword" name="loginpassword">
 					<td class="logintableTD"><label for="passwordHere" class="loginboxlabel">Password</label></td>
-					<td class="logintableTD"><input type="password" class="logintextinput" id="passwordHere" name="passwordHere" placeholder="Password Here"/></td>
+					<td class="logintableTD"><input type="password" class="logintextinput" id="passwordHere" name="memberPasswd" placeholder="Password Here"/></td>
 				</tr>
 			</table>
 			<%-- 
