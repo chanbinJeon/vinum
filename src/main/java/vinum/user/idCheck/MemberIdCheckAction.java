@@ -4,10 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import vinum.user.idCheck.MemberIdCheckService;
-import vinum.Action;
+import vinum.VinumAction;
 import vinum.ActionForward;
 
-public class MemberIdCheckAction implements Action {
+public class MemberIdCheckAction implements VinumAction {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

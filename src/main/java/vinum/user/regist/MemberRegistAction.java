@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import vinum.Action;
+import vinum.VinumAction;
 import vinum.user.login.MemberLoginService;
 import vinum.user.regist.MemberRegistService;
 import vinum.ActionForward;
 import vinum.user.MemberVO;
 
-public class MemberRegistAction implements Action {
+public class MemberRegistAction implements VinumAction {
 	private String registerrormessage = "등록실패";
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

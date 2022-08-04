@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import vinum.Action;
+import vinum.VinumAction;
 import vinum.ActionForward;
 import vinum.user.idCheck.MemberIdCheckAction;
 import vinum.user.logout.LogoutAction;
@@ -49,7 +49,7 @@ public class LoginFrontController extends HttpServlet {
 		// /login.me
 		// 2. 요청별 비지니스로직 실행
 		ActionForward forward = null;
-		Action action = null;
+		VinumAction action = null;
 
 		if (command.equals("/login.lo")) {
 			action = new LoginAction();

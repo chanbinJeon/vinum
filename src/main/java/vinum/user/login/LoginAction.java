@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import vinum.Action;
+import vinum.VinumAction;
 import vinum.ActionForward;
 
-public class LoginAction implements Action {
+public class LoginAction implements VinumAction {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
