@@ -52,13 +52,49 @@ public class WineDAO implements WineDAOIF {
 	@Override
 	public long selectWine(long productnumber) {
 		// TODO Auto-generated method stub
-		return 0;
+		long wineNum = 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT wineId FROM "+winetablename+" WHERE wineId = ?";
+
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setLong(1, productnumber);
+			rs = pstmt.executeQuery();
+
+			if(rs.next()) {
+				wineNum = rs.getLong("wineId");
+			}
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		return wineNum;
 	}
 
 	@Override
 	public int insertWine(WineVO wineVO) {
 		// TODO Auto-generated method stub
-		return 0;
+		int insertCount=0;		
+		PreparedStatement pstmt = null;		
+		String sql = "INSERT INTO "+winetablename+" VALUES (?,?,?,?,?)";
+		//String sql = "SELECT * FROM member";
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setLong(1, wineVO.getProductnumber());
+									
+			insertCount = pstmt.executeUpdate();						
+		}catch  (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);			
+		}
+		return insertCount;
 	}
 
 	@Override
