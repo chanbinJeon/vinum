@@ -35,6 +35,7 @@ public class MemberRegistAction implements VinumAction {
 		boolean registSuccess = memberRegistService.registMember(newMemberVO);
 
 		ActionForward forward = null;
+		response.setContentType("text/html;charset=UTF-8");
 		if (registSuccess) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginId", id);
@@ -43,7 +44,6 @@ public class MemberRegistAction implements VinumAction {
 			forward.setRedirect(true);
 		}
 		else {
-			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert(\""+registerrormessage+"\")");

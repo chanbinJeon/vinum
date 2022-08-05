@@ -5,16 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="./productinfoaddedit.css">
 </head>
 <body>
 <div class="infoaddedit" id="infoaddeditBG">
 	<form action="productinfoaddedit.do" method="post" class="infoaddedit" id="infoaddeditform">
-			<div class="productinfobox" id="productinfobox">
+		<div class="productinfobox" id="productinfobox">
 			<p class="productinfo" id="productnumber">#</p>
-			<h1 class="productinfo" id="producttitle"><input type="text" class="infoaddeditinput" id="infotitleaddedit"/></h1>
+			<h1 class="productinfo" id="producttitle"><input type="text" class="infoaddeditinput" id="infotitleaddedit" placeholder="Title here"/></h1>
 			<div class="productinfo" id="productimageslist">
-				<input type="image" class="infoaddeditinput" id="infoaddeditinput"/>
-				<div class="productimage" id="productimagethumbnail">image</div>
+				<input type="file" class="infoaddeditinput" id="infoaddeditinput"/>
+				<div class="productimage" id="productimagethumbnail"><figure>
+				<img src="#" alt="#" title="#"><figcaption>image</figcaption></figure></div>
 			</div>
 			<table class="productinfo" id="productinfotable">
 				<tr class="productinfotableTR" id="productcountryregion">
@@ -51,6 +53,10 @@
 				</tr>
 			</table>
 			<textarea class="infoaddeditinput" id="productdescriptionaddedit"></textarea>
+		</div>
+		<div class="productinfoaddeditbuttonslist" id="productinfoaddeditbuttonslist">
+			<button type="submit" class="productinfoaddeditbutton" id="addeditsubmitbutton">Submit</button>
+			<button type="button" onclick="history.back()" class="productinfoaddeditbutton" id="addeditcancelbutton">Cancel</button>
 		</div>
 	</form>
 </div>
