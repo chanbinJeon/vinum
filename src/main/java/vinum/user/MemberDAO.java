@@ -90,7 +90,6 @@ public class MemberDAO {
 		int insertCount=0;		
 		PreparedStatement pstmt = null;		
 		String sql = "INSERT INTO "+tablename+" VALUES (?,?,?,?,?)";
-		//String sql = "SELECT * FROM member";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,newMemberVO.getMemberId());
@@ -107,5 +106,24 @@ public class MemberDAO {
 		}
 		return insertCount;
 	}
+	
+	public int deleteMember(String memberId) {
+		int deleteCount = 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "DELETE FROM "+tablename+" WHERE memberId = ?";
 		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, memberId);
+			rs = pstmt.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		return deleteCount;
+	}
 }
