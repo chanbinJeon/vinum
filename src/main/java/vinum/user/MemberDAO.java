@@ -92,7 +92,7 @@ public class MemberDAO {
 		String sql = "INSERT INTO "+tablename+" VALUES (?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1,newMemberVO.getMemberId());
+			pstmt.setString(1, newMemberVO.getMemberId());
 			pstmt.setString(2, newMemberVO.getMemberPassword());	
 			pstmt.setString(3, newMemberVO.getMembernickname());
 			pstmt.setString(4, newMemberVO.getMemberEmail());
@@ -105,6 +105,33 @@ public class MemberDAO {
 			close(pstmt);			
 		}
 		return insertCount;
+	}
+	
+	public int updateMember(String memberId) {
+		int updateCount = 0;
+		MemberVO updateMemberVO = null;
+		memberId = updateMemberVO.getMemberId();
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE "+tablename+" SET memberNickname=?, memberEmail=?, memberPhone=? WHERE memberId="+memberId;
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, updateMemberVO.getMembernickname());
+			pstmt.setString(2, updateMemberVO.getMemberEmail());
+			pstmt.setString(3, updateMemberVO.getMemberphone());
+			
+			updateCount = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return updateCount;
+	}
+	
+	public int updatePassword(String memberId) {
+		int updateCount = 0;
+		return updateCount;
 	}
 	
 	public int deleteMember(String memberId) {
