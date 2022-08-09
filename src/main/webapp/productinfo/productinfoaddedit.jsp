@@ -53,7 +53,7 @@
 						<td class="productinfotableTD"><input type="text" class="infoaddeditinput" id="productfoodsregionaddedit"/></td>
 					</tr>
 				</table>
-				<textarea class="infoaddeditinput" id="productdescriptionaddedit"></textarea>
+				<textarea class="infoaddeditinput" id="productdescriptionaddedit" rows="30"></textarea>
 			</div>
 		</div>
 		<div class="productinfoaddeditbuttonslist" id="productinfoaddeditbuttonslist">
