@@ -10,15 +10,15 @@ package vinum.poll;
 public interface PollDAOIF {
 	public void listPolls();
 	public long selectPoll(long pollindex);
-	public int insertPoll(String polltitle, long pollauthor);
-	public int updatePoll(String polltitle, long pollauthor);
-	public int deletePoll(String polltitle, long pollauthor);
-	public void listPollquestions();
+	public int insertPoll(PollVO pollVO);
+	public int updatePoll(PollVO pollVO);
+	public int deletePoll(long pollindex);
+	public void listPollquestions(long pollindex);
 	public int insertPollquestion(PollquestionVO questionVO);
 	public int updatePollquestion(PollquestionVO questionVO);
-	public int deletePollquestion(PollquestionVO questionVO);
-	public void listPollquestionchoices();
+	public int deletePollquestion(short questionindex);
+	public void listPollquestionchoices(long pollindex, short questionindex);
 	public int insertPollquestionchoice(PollquestionselectVO choiceVO);
 	public int updatePollquestionchoice(PollquestionselectVO choiceVO);
-	public int deletePollquestionchoice(PollquestionselectVO choiceVO);
+	public int deletePollquestionchoice(byte choiceindex);
 }
