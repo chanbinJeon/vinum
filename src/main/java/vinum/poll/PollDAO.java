@@ -43,23 +43,61 @@ public class PollDAO implements PollDAOIF {
 	@Override
 	public long selectPoll(long pollindex) {
 		// TODO Auto-generated method stub
-		return 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		//PollVO pollVO = new PollVO();
+		String sql = "SELECT * FROM "+polltablename+" WHERE pollindex="+pollindex;
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return pollindex;
 	}
 
 	@Override
-	public int insertPoll(PollVO pollVO) {
+	public int insertPoll(String polltitle, long pollauthor) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int insertCount = 0;
+		String sql = "INSERT INTO "+polltablename+" (polltitle, pollauthor) VALUES ("+polltitle+", "+pollauthor+")";
+		try {
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return insertCount;
+	}
+
+	@Override
+	public int updatePoll(String polltitle, long pollauthor) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int updatePoll(PollVO pollVO) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int deletePoll(PollVO pollVO) {
+	public int deletePoll(String polltitle, long pollauthor) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

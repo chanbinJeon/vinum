@@ -107,10 +107,9 @@ public class MemberDAO {
 		return insertCount;
 	}
 	
-	public int updateMember(String memberId) {
+	public int updateMember(MemberVO updateMemberVO) {
 		int updateCount = 0;
-		MemberVO updateMemberVO = null;
-		memberId = updateMemberVO.getMemberId();
+		String memberId = updateMemberVO.getMemberId();
 		PreparedStatement pstmt = null;
 		String sql = "UPDATE "+tablename+" SET memberNickname=?, memberEmail=?, memberPhone=? WHERE memberId="+memberId;
 		try {
