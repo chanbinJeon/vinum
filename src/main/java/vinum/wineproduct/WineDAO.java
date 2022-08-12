@@ -82,13 +82,22 @@ public class WineDAO implements WineDAOIF {
 		// TODO Auto-generated method stub
 		int insertCount=0;		
 		PreparedStatement pstmt = null;		
-		String sql = "INSERT INTO "+winetablename+" VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO "+winetablename+" VALUES (?,?,?,?,?,?,?,?,?,?)";
 		//String sql = "SELECT * FROM member";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setLong(1, wineVO.getProductnumber());
-									
-			insertCount = pstmt.executeUpdate();						
+			pstmt.setString(2, wineVO.getProducttitle());
+			//pstmt.setNString(3, wineVO.getProductimagelink());
+			pstmt.setString(3, wineVO.getProductregion());
+			pstmt.setString(4, wineVO.getProductkind());
+			pstmt.setFloat(5, wineVO.getProductsugarcontent());
+			pstmt.setFloat(6, wineVO.getProductacidity());
+			pstmt.setFloat(7, wineVO.getProductbody());
+			pstmt.setFloat(8, wineVO.getProducttannin());
+			pstmt.setFloat(9, wineVO.getProductprice());
+			
+			insertCount = pstmt.executeUpdate();
 		}catch  (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -104,7 +113,43 @@ public class WineDAO implements WineDAOIF {
 	}
 
 	@Override
-	public int deleteWine(WineVO wineVO) {
+	public int deleteWine(long productnumber) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void listWineimages() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int insertWineimage(WineimageslinkVO wineimageslinkVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteWineimage(long productimageindex) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void listWinefoods() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int insertWinefood(WinefoodVO winefoodVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteWinefood(long productnumber) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

@@ -15,7 +15,7 @@ public class WineVO {
 	private long productnumber;
 	private String producttitle;
 	//private byte productimagesnum = 127;
-	private String[] productimagelink;
+	//private String[] productimagelink;
 	private String productregion;
 	private String productkind;
 	private float productsugarcontent;
@@ -23,7 +23,7 @@ public class WineVO {
 	private float productbody;
 	private float producttannin;
 	private float productprice;
-	private String[] productfoods;
+	//private String[] productfoods;
 	/**
 	 * @return the productnumber
 	 */
@@ -51,15 +51,15 @@ public class WineVO {
 	/**
 	 * @return the productimagelink
 	 */
-	public String[] getProductimagelink() {
+	/*public String[] getProductimagelink() {
 		return productimagelink;
-	}
+	}*/
 	/**
 	 * @param productimagelink the productimagelink to set
 	 */
-	public void setProductimagelink(String[] productimagelink) {
+	/*public void setProductimagelink(String[] productimagelink) {
 		this.productimagelink = productimagelink;
-	}
+	}*/
 	/**
 	 * @return the productregion
 	 */
@@ -147,13 +147,13 @@ public class WineVO {
 	/**
 	 * @return the productfoods
 	 */
-	public String[] getProductfoods() {
+	/*public String[] getProductfoods() {
 		return productfoods;
-	}
+	}*/
 	/**
 	 * @param productfoods the productfoods to set
 	 */
-	public void setProductfoods(String[] productfoods) {
+	/*public void setProductfoods(String[] productfoods) {
 		this.productfoods = productfoods;
-	}
+	}*/
 }
