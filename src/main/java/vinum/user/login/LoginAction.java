@@ -14,6 +14,7 @@ public class LoginAction implements VinumAction {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("memberId");
 		String passwd = request.getParameter("memberPasswd");
 		
