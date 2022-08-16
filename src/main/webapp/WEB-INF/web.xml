@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PollFrontController</display-name>
+    <servlet-name>PollFrontController</servlet-name>
+    <servlet-class>vinum.admin.poll.controller.PollFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PollFrontController</servlet-name>
+    <url-pattern>*.po</url-pattern>
+  </servlet-mapping>
 </web-app>

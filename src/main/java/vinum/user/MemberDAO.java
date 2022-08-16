@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import vinum.admin.poll.vo.PollVO;
+
 public class MemberDAO {
 	private Connection con;
 	private static MemberDAO instance;
@@ -152,4 +154,45 @@ public class MemberDAO {
 		}
 		return deleteCount;
 	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

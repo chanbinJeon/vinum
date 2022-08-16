@@ -19,6 +19,24 @@ public class PollDAO implements PollDAOIF {
 	private static String pollchoicetablename = "pollchoice";
 	private Connection con = null;
 	
+	public void setConnection(Connection con) {
+		this.con = con;
+	}
+	
+	
+	private PollDAO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	private static PollDAO instance;
+	
+	public static  PollDAO getInstance() {
+		if(instance == null) {
+			instance = new PollDAO();
+		}
+		return instance;
+	}
+	
 	@Override
 	public void listPolls() {
 		// TODO Auto-generated method stub
@@ -286,4 +304,85 @@ public class PollDAO implements PollDAOIF {
 		return 0;
 	}
 
+
+	public int insertPollAdmin(vinum.admin.poll.vo.PollVO pollVO) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int insertcount = 0;
+		
+	    
+		
+		String sql = "INSERT INTO pollAdmin (pollId, pollSubject, pollDesc) VALUES (poll_seq.nextval, ?, ?)";
+		try {
+			sql = "SELECT MAX(pollId) FROM pollAdmin";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			int pollId = 0;
+			if(rs.next()) {
+				pollId = rs.getInt("pollId") + 1;
+			}
+			else {
+				pollId = 1;
+			}
+			
+			
+			
+			sql = "INSERT INTO pollAdmin (pollId, pollSubject, pollDesc) VALUES (?, ?, ?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, pollId);
+			pstmt.setString(2, pollVO.getPollSubject());
+			pstmt.setString(3, pollVO.getPollDesc());
+			int pollAdminInsertCount  = pstmt.executeUpdate();
+			
+			sql = "INSERT INTO pollAdminAppend (pollId, pollQuestion, pollAnswer) VALUES (?, ?, ?)";
+			pstmt.setInt(1, pollId);
+			pstmt.setString(2, pollVO.getPollQuestion());
+			pstmt.setString(3, pollVO.getPollAnswer());
+			int pollAdminAppendInsertCount  = pstmt.executeUpdate();
+			
+			if(pollAdminInsertCount > 0 && pollAdminAppendInsertCount > 0) {
+				insertcount = 1;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				pstmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return insertcount;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
